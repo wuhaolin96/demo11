@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../jquery-3.4.1.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.get').click(function () {
+            $.get();
+        });
+
+        $('.post').click(function () {
+            $.post('http://47.107.100.125:8080/api/home/getAgreement',{name:'dads',skill:''});
+        });
+
+        $('.ajax').click(function () {
+            $.ajax({
+                url:'http://47.107.100.125:8080/api/home/getAgreement',
+                type:'get',
+                success:function (data) {
+                    console.log(data)
+                }
+            })
+        });
+    })
+</script>
+<body>
+<input class="get" type="button" value="get请求">
+<input class="post" type="button" value="post请求">
+<input class="ajax" type="button" value="ajax请求">
+</body>
+</html>
